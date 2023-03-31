@@ -1,54 +1,55 @@
 {
     "name": "dot-devcontainer-golang-1.19",
     "image": "ghcr.io/kumanoryo/golang:1.19",
-
-    "settings": {
-        "terminal.integrated.profiles.linux": {
-            "fish": {
-                "path": "fish"
-            }
-        },
-        "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
-        "workbench.colorCustomizations": {
-            "statusBar.background": "#00ADD8",
-            "statusBar.foreground": "#000000"
-        },
-        "go.interGopath": false,
-        "go.useLanguageServer": true,
-        "go.toolsEnvVars": {
-            "GO111MODULE": "on"
-        },
-        "[go]": {
-            "editor.snippetSuggestions": "none",
-            "editor.formatOnSave": true,
-            "editor.codeActionsOnSave": {
-                "source.organizeImports": true
-            }
-        },
-        "gopls": {
-            "usePlaceholders": true
-        },
-        "go.lintTool": "golangci-lint",
-        "go.lintFlags": [
-            "--fast",
-            "--print-issued-lines=false",
-            "--out-format=colored-line-number",
-            "--issues-exit-code=0"
-        ],
-        "go.testFlags": ["-v", "-count=1"],
-        "go.testEnvVars": {
-        }
-    },
-
     "remoteUser": "kumano_ryo",
-
     "mounts": [
         "source=${localEnv:HOME}/.gitconfig,target=/home/kumano_ryo/.gitconfig,type=bind,consistency=cached",
         "source=${localEnv:HOME}/.ssh,target=/home/kumano_ryo/.ssh,type=bind,consistency=cached",
         "source=${localEnv:HOME}/.config/gcloud,target=/home/kumano_ryo/.config/gcloud,type=bind,consistency=cached"
     ],
-
-    "extensions": [
-		"golang.go"
-	]
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "fish": {
+                        "path": "fish"
+                    }
+                },
+                "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+                "workbench.colorCustomizations": {
+                    "statusBar.background": "#00ADD8",
+                    "statusBar.foreground": "#000000"
+                },
+                "go.interGopath": false,
+                "go.useLanguageServer": true,
+                "go.toolsEnvVars": {
+                    "GO111MODULE": "on"
+                },
+                "[go]": {
+                    "editor.snippetSuggestions": "none",
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true
+                    }
+                },
+                "gopls": {
+                    "usePlaceholders": true
+                },
+                "go.lintTool": "golangci-lint",
+                "go.lintFlags": [
+                    "--fast",
+                    "--print-issued-lines=false",
+                    "--out-format=colored-line-number",
+                    "--issues-exit-code=0"
+                ],
+                "go.testFlags": ["-v", "-count=1"],
+                "go.testEnvVars": {
+                }
+            },
+            "extensions": [
+                "golang.go",
+                "github.copilot"
+            ]
+        }
+    }
 }
