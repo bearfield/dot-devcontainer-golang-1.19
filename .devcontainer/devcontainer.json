@@ -48,7 +48,8 @@
             },
             "extensions": [
                 "golang.go",
-                "github.copilot"
+                "github.copilot",
+                "gruntfuggly.todo-tree"
             ]
         }
     }
